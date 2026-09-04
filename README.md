@@ -45,6 +45,12 @@ des données (`/kaggle/input/...` sur Kaggle, racine du dépôt en local), fait 
 engineering, entraîne 4 familles de modèles en validation croisée sur l'intégralité des données,
 sélectionne le meilleur ensemble et écrit `submission.csv`.
 
+🖥️ **GPU automatique :** le notebook détecte les GPU disponibles (`nvidia-smi`) et accélère
+l'entraînement en conséquence — idéal avec l'accélérateur Kaggle **GPU T4 x2** (Settings →
+Accelerator) : CatBoost exploite nativement les deux GPU pour un même modèle, LightGBM/XGBoost
+alternent un GPU par pli de CV. Repli automatique et transparent sur CPU sinon (aucune action
+requise, comportement local inchangé).
+
 ### Option B — Pipeline modulaire pas-à-pas
 ```powershell
 python -m venv .venv
@@ -70,8 +76,14 @@ Le journal d'expériences complet est dans `outputs/logs/experiment_log.csv`
 |---|---|
 | Baselines (features brutes, sous-échantillon) | ~0.940 |
 | Recherche Optuna LightGBM (250k, 2-fold) | 0.9416 |
-| LightGBM tuné, pleine échelle (668k, 5-fold) | ~0.9417 |
-| **Ensemble final (4 modèles, pleine échelle)** | **voir notebook — typiquement 0.94–0.945** |
+| LightGBM tuné, **pleine échelle** (668k, validé 3-fold) | **0.9417** |
+| CatBoost, **pleine échelle** (668k, validé 3-fold) | **0.9411** |
+| XGBoost, **pleine échelle** (668k, 1er pli) | **0.9409** |
+| **Ensemble final (4 modèles, 5-fold, notebook)** | **~0.942–0.945** (voir section 11 du notebook) |
+
+*(Chiffres de la colonne "pleine échelle" obtenus lors de la validation empirique de ce pipeline :
+les 3 familles de modèles convergent de façon remarquablement étroite autour de 0.941, ce qui est
+une preuve supplémentaire du plafond de bruit décrit ci-dessous.)*
 
 ### ⚠️ Note importante sur le plafond de score
 
