@@ -1,0 +1,27 @@
+# Environnements virtuels
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# Artefacts d'entraînement auto-générés
+catboost_info/
+*.parquet
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs / scratch
+outputs/logs/_scratch_*
+src/_scratch_*
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+

@@ -1,0 +1,557 @@
+================================================================================
+1. SHAPE
+================================================================================
+train shape: (668665, 15)
+test shape : (286571, 14)
+train columns: ['id', 'Age', 'Annual_Income_USD', 'Daily_Commute_km', 'Number_of_Cars_Owned', 'Charging_Stations_Near_Home', 'Charging_Stations_Near_Work', 'Environmental_Concern_Level', 'Gender', 'City_Type', 'Current_Car_Type', 'Home_Charging_Possible', 'Subsidy_Available', 'Range_Anxiety_Level', 'Will_Buy_EV']
+test columns : ['id', 'Age', 'Annual_Income_USD', 'Daily_Commute_km', 'Number_of_Cars_Owned', 'Charging_Stations_Near_Home', 'Charging_Stations_Near_Work', 'Environmental_Concern_Level', 'Gender', 'City_Type', 'Current_Car_Type', 'Home_Charging_Possible', 'Subsidy_Available', 'Range_Anxiety_Level']
+
+================================================================================
+2. DTYPES
+================================================================================
+id                               int64
+Age                              int64
+Annual_Income_USD              float64
+Daily_Commute_km               float64
+Number_of_Cars_Owned             int64
+Charging_Stations_Near_Home      int64
+Charging_Stations_Near_Work      int64
+Environmental_Concern_Level    float64
+Gender                             str
+City_Type                          str
+Current_Car_Type                   str
+Home_Charging_Possible             str
+Subsidy_Available                  str
+Range_Anxiety_Level                str
+Will_Buy_EV                        str
+
+================================================================================
+3. MISSING VALUES
+================================================================================
+train missing:
+id                             0
+Age                            0
+Annual_Income_USD              0
+Daily_Commute_km               0
+Number_of_Cars_Owned           0
+Charging_Stations_Near_Home    0
+Charging_Stations_Near_Work    0
+Environmental_Concern_Level    0
+Gender                         0
+City_Type                      0
+Current_Car_Type               0
+Home_Charging_Possible         0
+Subsidy_Available              0
+Range_Anxiety_Level            0
+Will_Buy_EV                    0
+
+test missing:
+id                             0
+Age                            0
+Annual_Income_USD              0
+Daily_Commute_km               0
+Number_of_Cars_Owned           0
+Charging_Stations_Near_Home    0
+Charging_Stations_Near_Work    0
+Environmental_Concern_Level    0
+Gender                         0
+City_Type                      0
+Current_Car_Type               0
+Home_Charging_Possible         0
+Subsidy_Available              0
+Range_Anxiety_Level            0
+
+================================================================================
+4. DUPLICATES
+================================================================================
+train duplicated full rows (incl id): 0
+train duplicated rows (excl id): 0
+train duplicated ids: 0
+test duplicated rows (excl id): 0
+test duplicated ids: 0
+train/test id overlap count: 0
+rows in train+test sharing an identical feature-combination with another row: 0 (0.0000%)
+
+================================================================================
+5. TARGET DISTRIBUTION
+================================================================================
+Will_Buy_EV
+No     551886
+Yes    116779
+Will_Buy_EV
+No     0.825355
+Yes    0.174645
+positive rate: 0.1746
+
+================================================================================
+6. NUMERICAL DESCRIBE (train vs test)
+================================================================================
+
+--- Age ---
+               train           test
+count  668665.000000  286571.000000
+mean       47.039171      47.070824
+std        12.875448      12.864850
+min        25.000000      25.000000
+1%         25.000000      25.000000
+5%         27.000000      27.000000
+25%        36.000000      36.000000
+50%        47.000000      47.000000
+75%        58.000000      58.000000
+95%        67.000000      67.000000
+99%        69.000000      69.000000
+max        69.000000      69.000000
+n_unique train: 45  | n_unique test: 45
+
+--- Annual_Income_USD ---
+               train           test
+count  668665.000000  286571.000000
+mean    84769.266989   84799.508432
+std     28648.029042   28626.851098
+min     30000.000000   30000.000000
+1%      30000.000000   30000.000000
+5%      30000.000000   30000.000000
+25%     67376.000000   67380.000000
+50%     84880.000000   84926.000000
+75%    102753.000000  102751.000000
+95%    132902.000000  132871.000000
+99%    151159.000000  151070.000000
+max    188549.000000  186936.000000
+n_unique train: 13214  | n_unique test: 10526
+
+--- Daily_Commute_km ---
+               train           test
+count  668665.000000  286571.000000
+mean       32.158298      32.159305
+std        18.730474      18.724436
+min         5.000000       5.000000
+1%          5.000000       5.000000
+5%          5.000000       5.000000
+25%        17.200000      17.200000
+50%        33.600000      33.600000
+75%        47.400000      47.300000
+95%        59.800000      59.800000
+99%        68.500000      68.500000
+max        98.700000     103.900000
+n_unique train: 805  | n_unique test: 781
+
+--- Number_of_Cars_Owned ---
+               train           test
+count  668665.000000  286571.000000
+mean        1.712626       1.716095
+std         0.729275       0.731088
+min         1.000000       1.000000
+1%          1.000000       1.000000
+5%          1.000000       1.000000
+25%         1.000000       1.000000
+50%         2.000000       2.000000
+75%         2.000000       2.000000
+95%         3.000000       3.000000
+99%         4.000000       4.000000
+max         4.000000       4.000000
+n_unique train: 4  | n_unique test: 4
+
+--- Charging_Stations_Near_Home ---
+               train           test
+count  668665.000000  286571.000000
+mean        4.960408       4.950693
+std         3.926843       3.928626
+min         0.000000       0.000000
+1%          0.000000       0.000000
+5%          0.000000       0.000000
+25%         2.000000       2.000000
+50%         4.000000       4.000000
+75%         7.000000       7.000000
+95%        13.000000      13.000000
+99%        14.000000      14.000000
+max        14.000000      14.000000
+n_unique train: 15  | n_unique test: 15
+
+--- Charging_Stations_Near_Work ---
+               train           test
+count  668665.000000  286571.000000
+mean        7.176314       7.155626
+std         5.186627       5.186880
+min         0.000000       0.000000
+1%          0.000000       0.000000
+5%          1.000000       1.000000
+25%         3.000000       3.000000
+50%         6.000000       6.000000
+75%        10.000000      10.000000
+95%        18.000000      18.000000
+99%        19.000000      19.000000
+max        19.000000      19.000000
+n_unique train: 20  | n_unique test: 20
+
+--- Environmental_Concern_Level ---
+               train           test
+count  668665.000000  286571.000000
+mean        2.935477       2.934554
+std         1.429119       1.427541
+min         1.000000       1.000000
+1%          1.000000       1.000000
+5%          1.000000       1.000000
+25%         2.000000       2.000000
+50%         3.000000       3.000000
+75%         4.000000       4.000000
+95%         5.000000       5.000000
+99%         5.000000       5.000000
+max         5.000000       5.000000
+n_unique train: 5  | n_unique test: 5
+
+================================================================================
+7. CATEGORICAL CARDINALITY & DISTRIBUTION (train vs test)
+================================================================================
+
+--- Gender ---
+        train_pct  test_pct
+Gender                     
+Male     0.550282  0.550115
+Female   0.441816  0.442016
+Other    0.007902  0.007869
+
+--- City_Type ---
+           train_pct  test_pct
+City_Type                     
+Urban       0.432661  0.431314
+Suburban    0.381921  0.382718
+Rural       0.185419  0.185968
+
+--- Current_Car_Type ---
+                  train_pct  test_pct
+Current_Car_Type                     
+Sedan              0.453828  0.454285
+SUV                0.368712  0.368799
+Hatchback          0.118801  0.119007
+Truck              0.058659  0.057909
+
+--- Home_Charging_Possible ---
+                        train_pct  test_pct
+Home_Charging_Possible                     
+Yes                      0.691941  0.692603
+No                       0.308059  0.307397
+
+--- Subsidy_Available ---
+                   train_pct  test_pct
+Subsidy_Available                     
+Yes                 0.627981  0.629436
+No                  0.372019  0.370564
+
+--- Range_Anxiety_Level ---
+                     train_pct  test_pct
+Range_Anxiety_Level                     
+Low                   0.903251  0.904652
+Medium                0.093468  0.091757
+High                  0.003281  0.003591
+
+================================================================================
+8. TARGET RATE BY CATEGORY
+================================================================================
+
+--- Gender ---
+            mean   count
+Gender                  
+Female  0.177641  295427
+Male    0.172253  367954
+Other   0.173732    5284
+
+--- City_Type ---
+               mean   count
+City_Type                  
+Rural      0.193389  123983
+Suburban   0.180936  255377
+Urban      0.161058  289305
+
+--- Current_Car_Type ---
+                      mean   count
+Current_Car_Type                  
+Hatchback         0.174299   79438
+SUV               0.180953  246545
+Sedan             0.171967  303459
+Truck             0.156413   39223
+
+--- Home_Charging_Possible ---
+                            mean   count
+Home_Charging_Possible                  
+No                      0.127085  205988
+Yes                     0.195819  462677
+
+--- Subsidy_Available ---
+                       mean   count
+Subsidy_Available                  
+No                 0.005757  248756
+Yes                0.274695  419909
+
+--- Range_Anxiety_Level ---
+                         mean   count
+Range_Anxiety_Level                  
+High                 0.001367    2194
+Low                  0.189027  603972
+Medium               0.041745   62499
+
+================================================================================
+9. TARGET RATE BY NUMERICAL BIN (quantile bins, q=10)
+================================================================================
+
+--- Age ---
+                    mean  count
+Age                            
+(24.999, 29.0]  0.189489  72933
+(29.0, 34.0]    0.160169  69408
+(34.0, 38.0]    0.170949  61837
+(38.0, 43.0]    0.177092  74419
+(43.0, 47.0]    0.173859  62401
+(47.0, 51.0]    0.176670  61748
+(51.0, 56.0]    0.200811  77954
+(56.0, 60.0]    0.167178  56066
+(60.0, 65.0]    0.159562  72931
+(65.0, 69.0]    0.163987  58968
+
+--- Annual_Income_USD ---
+                          mean  count
+Annual_Income_USD                    
+(29999.999, 45980.0]  0.044486  66942
+(45980.0, 62671.0]    0.084593  66861
+(62671.0, 71832.0]    0.106622  66834
+(71832.0, 78915.0]    0.131650  66844
+(78915.0, 84880.0]    0.156083  66977
+(84880.0, 91619.0]    0.179741  67013
+(91619.0, 96748.0]    0.197670  66616
+(96748.0, 107798.0]   0.219553  66854
+(107798.0, 122349.0]  0.289040  66970
+(122349.0, 188549.0]  0.337313  66754
+
+--- Daily_Commute_km ---
+                      mean   count
+Daily_Commute_km                  
+(4.999, 21.9]     0.196327  201796
+(21.9, 28.3]      0.181567   66306
+(28.3, 33.6]      0.168078   66505
+(33.6, 39.0]      0.173410   66680
+(39.0, 44.9]      0.182021   67355
+(44.9, 49.8]      0.158270   66576
+(49.8, 55.8]      0.165747   67205
+(55.8, 98.7]      0.127487   66242
+
+--- Number_of_Cars_Owned ---
+                          mean   count
+Number_of_Cars_Owned                  
+(0.999, 2.0]          0.174827  586299
+(2.0, 3.0]            0.174848   68877
+(3.0, 4.0]            0.165691   13489
+
+--- Charging_Stations_Near_Home ---
+                                 mean   count
+Charging_Stations_Near_Home                  
+(-0.001, 1.0]                0.191471  138042
+(1.0, 2.0]                   0.188041  101547
+(2.0, 3.0]                   0.161543   58845
+(3.0, 4.0]                   0.158478   53692
+(4.0, 5.0]                   0.168516   52986
+(5.0, 7.0]                   0.165618  113146
+(7.0, 8.0]                   0.162711   20816
+(8.0, 11.0]                  0.168802   66119
+(11.0, 14.0]                 0.173651   63472
+
+--- Charging_Stations_Near_Work ---
+                                 mean   count
+Charging_Stations_Near_Work                  
+(-0.001, 1.0]                0.184765   79409
+(1.0, 3.0]                   0.181386  129277
+(3.0, 5.0]                   0.174386   92209
+(5.0, 6.0]                   0.168768   49103
+(6.0, 8.0]                   0.171769   96269
+(8.0, 9.0]                   0.173646   49745
+(9.0, 12.0]                  0.165300   48536
+(12.0, 16.0]                 0.170329   70904
+(16.0, 19.0]                 0.169451   53213
+
+--- Environmental_Concern_Level ---
+                                 mean   count
+Environmental_Concern_Level                  
+(0.999, 2.0]                 0.013174  282609
+(2.0, 3.0]                   0.110922  127351
+(3.0, 4.0]                   0.248848  130469
+(4.0, 5.0]                   0.518287  128236
+
+================================================================================
+10. TARGET RATE BY DISCRETE INTEGER VALUE (low cardinality numeric)
+================================================================================
+
+--- Number_of_Cars_Owned ---
+                          mean   count
+Number_of_Cars_Owned                  
+1                     0.171350  288012
+2                     0.178184  298287
+3                     0.174848   68877
+4                     0.165691   13489
+
+--- Charging_Stations_Near_Home ---
+                                 mean   count
+Charging_Stations_Near_Home                  
+0                            0.185114   69865
+1                            0.197985   68177
+2                            0.188041  101547
+3                            0.161543   58845
+4                            0.158478   53692
+5                            0.168516   52986
+6                            0.164288   55707
+7                            0.166908   57439
+8                            0.162711   20816
+9                            0.166905   22396
+10                           0.169334   20055
+11                           0.170145   23668
+12                           0.174753   21642
+13                           0.172822   21282
+14                           0.173350   20548
+
+--- Charging_Stations_Near_Work ---
+                                 mean  count
+Charging_Stations_Near_Work                 
+0                            0.191446  25673
+1                            0.181573  53736
+2                            0.188381  49538
+3                            0.177040  79739
+4                            0.172634  45472
+5                            0.176092  46737
+6                            0.168768  49103
+7                            0.169693  45594
+8                            0.173636  50675
+9                            0.173646  49745
+10                           0.163934  15616
+11                           0.168396  15612
+12                           0.163739  17308
+13                           0.165163  17183
+14                           0.170506  17366
+15                           0.171777  16306
+16                           0.173425  20049
+17                           0.170648  18166
+18                           0.167890  18113
+19                           0.169836  16934
+
+--- Environmental_Concern_Level ---
+                                 mean   count
+Environmental_Concern_Level                  
+1.0                          0.005655  147476
+2.0                          0.021379  135133
+3.0                          0.110922  127351
+4.0                          0.248848  130469
+5.0                          0.518287  128236
+
+================================================================================
+11. TWO-WAY INTERACTIONS: TARGET RATE (selected combos)
+================================================================================
+
+--- Home_Charging_Possible x Subsidy_Available ---
+                                              mean   count
+Home_Charging_Possible Subsidy_Available                  
+No                     No                 0.004037   80504
+                       Yes                0.206026  125484
+Yes                    No                 0.006579  168252
+                       Yes                0.303962  294425
+
+--- Home_Charging_Possible x Range_Anxiety_Level ---
+                                                mean   count
+Home_Charging_Possible Range_Anxiety_Level                  
+No                     High                 0.001367    2194
+                       Low                  0.165832  142433
+                       Medium               0.041639   61361
+Yes                    Low                  0.196185  461539
+                       Medium               0.047452    1138
+
+--- Subsidy_Available x Range_Anxiety_Level ---
+                                           mean   count
+Subsidy_Available Range_Anxiety_Level                  
+No                High                 0.000000     887
+                  Low                  0.006321  222586
+                  Medium               0.000989   25283
+Yes               High                 0.002295    1307
+                  Low                  0.295658  381386
+                  Medium               0.069433   37216
+
+--- City_Type x Home_Charging_Possible ---
+                                      mean   count
+City_Type Home_Charging_Possible                  
+Rural     No                      0.046392    4074
+          Yes                     0.198384  119909
+Suburban  No                      0.082378   26245
+          Yes                     0.192225  229132
+Urban     No                      0.135636  175669
+          Yes                     0.200359  113636
+
+--- Current_Car_Type x Range_Anxiety_Level ---
+                                          mean   count
+Current_Car_Type Range_Anxiety_Level                  
+Hatchback        High                 0.000000     202
+                 Low                  0.188265   71856
+                 Medium               0.043089    7380
+SUV              High                 0.001095     913
+                 Low                  0.195452  223416
+                 Medium               0.042537   22216
+Sedan            High                 0.002114     946
+                 Low                  0.186234  273855
+                 Medium               0.041245   28658
+Truck            High                 0.000000     133
+                 Low                  0.171359   34845
+                 Medium               0.038634    4245
+
+================================================================================
+12. CORRELATIONS (numeric + target)
+================================================================================
+                                  Age  Annual_Income_USD  Daily_Commute_km  Number_of_Cars_Owned  Charging_Stations_Near_Home  Charging_Stations_Near_Work  Environmental_Concern_Level  _target_num
+Age                          1.000000          -0.004559         -0.006538             -0.002028                    -0.004133                    -0.005855                    -0.003703    -0.007450
+Annual_Income_USD           -0.004559           1.000000          0.007994             -0.000154                    -0.008646                    -0.002770                     0.076405     0.225729
+Daily_Commute_km            -0.006538           0.007994          1.000000              0.002722                     0.045158                     0.034986                    -0.018868    -0.045866
+Number_of_Cars_Owned        -0.002028          -0.000154          0.002722              1.000000                     0.008495                     0.008611                    -0.000579     0.003896
+Charging_Stations_Near_Home -0.004133          -0.008646          0.045158              0.008495                     1.000000                     0.511134                    -0.011332    -0.016353
+Charging_Stations_Near_Work -0.005855          -0.002770          0.034986              0.008611                     0.511134                     1.000000                    -0.007833    -0.012229
+Environmental_Concern_Level -0.003703           0.076405         -0.018868             -0.000579                    -0.011332                    -0.007833                     1.000000     0.464079
+_target_num                 -0.007450           0.225729         -0.045866              0.003896                    -0.016353                    -0.012229                     0.464079     1.000000
+
+================================================================================
+13. ID ANALYSIS
+================================================================================
+train id min/max: 0 / 668664
+test id min/max : 668665 / 955235
+train id is contiguous range: True
+corr(id, target): -0.00001
+target rate by id-vigntile:
+                          mean  count
+id                                   
+(-0.001, 33433.2]     0.173805  33434
+(33433.2, 66866.4]    0.175515  33433
+(66866.4, 100299.6]   0.173033  33433
+(100299.6, 133732.8]  0.176293  33433
+(133732.8, 167166.0]  0.175540  33434
+(167166.0, 200599.2]  0.173362  33433
+(200599.2, 234032.4]  0.172973  33433
+(234032.4, 267465.6]  0.175605  33433
+(267465.6, 300898.8]  0.177699  33433
+(300898.8, 334332.0]  0.173117  33434
+(334332.0, 367765.2]  0.175605  33433
+(367765.2, 401198.4]  0.175545  33433
+(401198.4, 434631.6]  0.174977  33433
+(434631.6, 468064.8]  0.175126  33433
+(468064.8, 501498.0]  0.172369  33434
+(501498.0, 534931.2]  0.170460  33433
+(534931.2, 568364.4]  0.176233  33433
+(568364.4, 601797.6]  0.175126  33433
+(601797.6, 635230.8]  0.176831  33433
+(635230.8, 668664.0]  0.173685  33434
+
+================================================================================
+14. SUSPICIOUS VALUES / OUTLIERS
+================================================================================
+Age: min=25, max=69, <1%=0, >99%=0
+Annual_Income_USD: min=30000.0, max=188549.0, <1%=0, >99%=6654
+Daily_Commute_km: min=5.0, max=98.7, <1%=0, >99%=6648
+Number_of_Cars_Owned: min=1, max=4, <1%=0, >99%=0
+Charging_Stations_Near_Home: min=0, max=14, <1%=0, >99%=0
+Charging_Stations_Near_Work: min=0, max=19, <1%=0, >99%=0
+Environmental_Concern_Level: min=1.0, max=5.0, <1%=0, >99%=0
+
+================================================================================
+15. EXACT DUPLICATE FEATURE-ROWS WITH CONFLICTING TARGETS (train only)
+================================================================================
+number of feature-combinations appearing >1 time: 0
+number of feature-combinations with conflicting targets: 0
