@@ -19,9 +19,14 @@ catboost_info/
 # Logs / scratch
 outputs/logs/_scratch_*
 src/_scratch_*
+_tmp_*
+
+# Sortie générée par le notebook exécuté en local
+/submission.csv
 
 # OS / IDE
 .DS_Store
 Thumbs.db
 .idea/
+
 
