@@ -22,7 +22,7 @@ src/_scratch_*
 _tmp_*
 
 # Sortie générée par le notebook exécuté en local
-/submission.csv
+# /submission.csv
 
 # OS / IDE
 .DS_Store
